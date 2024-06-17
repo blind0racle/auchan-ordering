@@ -137,6 +137,10 @@ def login():
                 return 'Invalid email or password'
 
     return render_template('login.html')
+@app.route('/sign_out')
+def sign_out():
+    session.clear()
+    return redirect(url_for('login'))
 
 @app.route('/order', methods=['POST'])
 def order():

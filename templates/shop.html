@@ -34,9 +34,9 @@
         </button>
     </div>
     <div class="buttons">
-        <a href="{{ url_for('login') }}">
+        <a href="{{ url_for('sign_out') }}">
             <button class="cart-button">
-                <span class="total-price">{{(user_email)}}</span>
+                <span class="total-price">Выйти из {{(user_email)}}</span>
                 <img src="{{ url_for('static', filename='images/prof.png') }}" alt="profile">
             </button>
         </a>
