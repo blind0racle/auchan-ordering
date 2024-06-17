@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,66 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Catalogue</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/unready.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/unready.css') }}">
+    <style>
+        .btn-container {
+            display: flex;
+            gap: 10px; /* Optional: Adds spacing between buttons */
+        }
+        .btn-container .buy {
+            width: 150%;
+            flex: 8; /* 80% width */
+        }
+        .btn-container .info {
+            width: 130%;
+            flex: 2; /* 20% width */
+        }
+    </style>
 </head>
 <body>
-
-
 <header class="header">
     <div class="logo">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
     </div>
-
     <div class="search-bar">
         <input type="text" placeholder="Search...">
         <button type="submit">
-            <img src="{{ url_for('static', filename='images/search.png') }}" alt="find">
         </button>
     </div>
-
     <div class="buttons">
-        <img src="{{ url_for('static', filename='images/search.png') }}" alt="find">
-        <button class="cart-button"><img src="{{ url_for('static', filename='images/cart.png') }}" alt="find"></button>
+        <a href="{{ url_for('login') }}">
+            <button class="cart-button">
+                <span class="total-price">{{ '%.2f'|format(total_price) }} ₽</span>
+                <img src="{{ url_for('static', filename='images/prof.png') }}" alt="profile">
+            </button>
+        </a>
+
+        <a href="{{ url_for('view_cart') }}">
+            <button class="cart-button">
+                <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart">
+                <span class="total-price">{{ '%.2f'|format(total_price) }} ₽</span>
+            </button>
+        </a>
     </div>
 </header>
-
 <div class="container">
     <div class="row">
         {% for item in items %}
         <div class="col-3">
             <div class="item">
                 <div class="image-container">
-                    <img src="{{ url_for('static', filename='images/' + item['image']) }}" class="img-fluid" alt="Item Image">
+<img src="{{ url_for('static', filename='images/' + item['image']) }}" class="img-fluid" alt="Item Image">
                 </div>
                 <h4>{{ item['name'] }}</h4>
-                <p>{{ item['price'] }} ₽.</p>
+                <p>{{ '%.2f'|format(item['price']) }} ₽.</p>
                 <div class="btn-container">
-                    <button class="btn buy" data-item-id="{{ loop.index0 }}" id="buy-{{ loop.index0 }}">В корзину</button>
-                    <button class="btn info">i</button>
+                    <form action="{{ url_for('add_to_cart') }}" method="POST">
+                        <!-- Using item index directly instead of loop.index0 to avoid errors -->
+                        <input type="hidden" name="item_id" value="{{ loop.index0 }}">
+                        <button type="submit" class="btn buy btn-primary">
+                            {% if cart.get(loop.index0|string, 0) > 0 %}
+                                В корзине ({{ cart.get(loop.index0|string) }})
+                            {% else %}
+                                В корзину
+                            {% endif %}
+                        </button>
+                    </form>
+                    <form action="{{ url_for('remove_from_cart') }}" method="POST">
+                        <input type="hidden" name="item_id" value="{{ loop.index0 }}">
+                        <button type="submit" class="btn info btn-secondary">
+                            {{ '-' if cart.get(loop.index0|string, 0) > 0 else 'i' }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
-<script>
-    // JavaScript to handle adding items to cart and updating button text
-    const cart = {};
-
-    document.querySelectorAll('.btn.buy').forEach(button => {
-        button.addEventListener('click', function() {
-            const itemId = this.getAttribute('data-item-id');
-            if (!cart[itemId]) {
-                cart[itemId] = 0;
-            }
-            cart[itemId] += 1;
-            this.textContent = `В корзине ${cart[itemId]}`;
-            this.classList.remove('buy');
-            this.classList.add('in-cart');
-        });
-    });
-</script>
-
 </body>
 </html>

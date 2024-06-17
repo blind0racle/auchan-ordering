@@ -1,62 +1,83 @@
-.container{
-    margin-top: 100px;
-    z-index: 0;
+@font-face {
+  font-family: 'YourFontName';
+  src: url('/static/fonts/your-font.ttf') format('truetype');
+  }
+
+*{
+    font-family: 'Sana', sans-serif;
 }
 
+
+.container {
+    margin-top: 80px;
+    z-index: 0;
+    max-width: 1340px;
+}
+
+.mt-4{
+    margin-top: 80px;
+    z-index: 0;
+    max-width: 1340px;
+}
+
+/* Item Styles */
 .item {
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
     margin: 15px 0px;
     font-weight: 800;
     font-size: 1.4em;
 }
 
+/* Column Styles */
 .col-3 {
     max-width: 20%;
     padding-right: 7px;
     padding-left: 8px;
 }
 
-.container {
-    max-width: 1340px;
-}
-
+/* Button Styles */
 .btn {
     border-radius: 30px;
     text-align: center;
     cursor: pointer;
 }
 
+/* Buy Button Styles */
 .buy {
+    font-size: 14px;
     border: 3px solid #e1001a; /* Initial border style */
     color: #e1001a; /* Text color */
     background-color: white;
-    width: 80%;
-    margin-right: 5px;
+    width: 70%;
     transition: all 0.3s ease; /* Smooth transition */
+
 }
 
 .buy.in-cart {
     background-color: #e1001a; /* Background color for "in-cart" state */
     color: white; /* Text color for "in-cart" state */
     border: none; /* Remove border for "in-cart" state */
+    outline: none;
 }
 
+/* Info Button Styles */
 .info {
     background-color: #00915b;
     width: 20%;
     color: white;
 }
 
+/* Button Container Styles */
 .btn-container {
     margin-top: -10px;
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center; /* Center align items vertically */
 }
 
-/* Ensure container maintains a 1:1 aspect ratio */
+/* Image Container Styles */
 .image-container {
     position: relative;
     width: 100%;
@@ -64,7 +85,6 @@
     overflow: hidden;
 }
 
-/* Ensure image fills the container while maintaining aspect ratio */
 .image-container img {
     position: absolute;
     width: 100%;
@@ -72,6 +92,7 @@
     object-fit: cover; /* Ensures image covers container maintaining aspect ratio */
 }
 
+/* Header Styles */
 .header {
     background-color: white;
     width: 100%;
@@ -83,15 +104,17 @@
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
     z-index: 1;
 }
 
+/* Logo Styles */
 .logo img {
     width: 70px; /* Adjust the size as needed */
     height: auto;
 }
 
+/* Search Bar Styles */
 .search-bar {
     display: flex;
     align-items: center;
@@ -115,6 +138,7 @@
     outline: none;
 }
 
+/* Button Group Styles */
 .buttons button {
     border: none;
     background: none;
@@ -122,23 +146,89 @@
     margin-left: 10px;
 }
 
+/* Profile Button Styles */
 .profile-button {
     padding: 7px 15px;
     border-radius: 15px; /* Rounded buttons */
     margin-right: 5px;
 }
 
+/* Cart Button Styles */
 .cart-button {
     cursor: pointer; /* Display the pointer cursor on hover */
     margin-right: 15px;
 }
 
 .cart-button img {
-    width: 40px; /* Adjust the size as needed */
+    width: 37px; /* Adjust the size as needed */
     height: auto;
 }
 
+/* Search Button Image Styles */
 .search-bar img {
     width: 30px; /* Adjust the size as needed */
     height: auto;
 }
+
+.total-price {
+    color: #00915b;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+
+
+
+.title{
+    color: #e1001a;
+}
+
+.inner-cart{
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 80px;
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+
+.inner-cart .stripe{
+    margin: -20px;
+    padding: 0px;
+    width: 120%;
+    height: 40px;
+    background-color: #e1001a;
+    margin-bottom: 20px;
+}
+
+.list-group-item{
+    border: none;
+}
+
+.step{
+    width: 55px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    padding: 2px;
+    background-color: #e1001a;
+    border-radius: 50px;
+}
+
+.steps{
+    display: inline-block;
+    margin:10px;
+}
+
+.pay{
+    margin: 10px;
+    background-color: #00915b;
+    color: white;
+    width: 40%;
+    font-size: 24px
+}
+
