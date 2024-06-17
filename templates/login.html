@@ -18,11 +18,12 @@
         }
 
         form {
-            align: center;
-            align-content: center;
+
+            justify-content: center;
+            align-items: center;
             padding: 20px 20px 0 20px;
             border-radius: 35px;
-            background: #fff; /* Accent color */
+            background: #fff;
             width: 300px;
             border: 3px solid #00915b;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -30,35 +31,46 @@
 
         h1 {
             text-align: center;
+            color: #00915b;
         }
 
         input {
             outline: none;
             margin-top: 20px;
-            padding: 5px 20px 5px 20px;
+            padding: 10px 20px 10px 20px;
             width: 80%;
             border-radius: 50px;
             border: 2px solid #e1001a;
         }
 
-        input[type="submit"] {
-            font-size: 1.4em;
-            cursor: pointer;
-            background: #e1001a; /* White background */
-            color: #fff; /* Accent color */
-            border-radius: 50px;
-            padding: 5px 5px;
-            decoration: none;
-            border: none;
+input[type="submit"] {
+    width: 94%;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-image: url('/static/images/enter.svg');
+    background-color: #00000000;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 5px;
+    text-decoration: none;
+    border: none;
+}
+
+
+        img{
+             width: 30%;
+            display: block;
+            margin: 20px auto 0;
         }
     </style>
 </head>
 <body>
     <form method="POST">
-        <h1>Login</h1>
-            <input type="text" name="email" placeholder="  Ваша Эл. почта">
-            <input type="password" name="password" placeholder="  Ваш пароль">
-        <input type="submit" value="Войти"><br><br>
+        <img src="{{ url_for('static', filename='images/logo-min.png') }}" alt="logo">
+        <h1>Вход</h1>
+            <input type="text" name="email" placeholder="Ваша Эл. почта">
+            <input type="password" name="password" placeholder="Ваш пароль">
+        <input type="submit" value=""><br><br>
     </form>
 </body>
 </html>

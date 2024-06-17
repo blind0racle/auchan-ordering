@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'YourFontName';
-  src: url('/static/fonts/your-font.ttf') format('truetype');
+  font-family: 'Sana';
+  src: url('/static/fonts/sana.ttf') format('truetype');
   }
 
 *{
     font-family: 'Sana', sans-serif;
 }
-
 
 .container {
     margin-top: 80px;
@@ -20,7 +19,6 @@
     max-width: 1340px;
 }
 
-/* Item Styles */
 .item {
     padding: 20px;
     border-radius: 20px;
@@ -31,57 +29,52 @@
     font-size: 1.4em;
 }
 
-/* Column Styles */
 .col-3 {
     max-width: 20%;
     padding-right: 7px;
     padding-left: 8px;
 }
 
-/* Button Styles */
 .btn {
     border-radius: 30px;
     text-align: center;
     cursor: pointer;
 }
 
-/* Buy Button Styles */
 .buy {
     font-size: 14px;
-    border: 3px solid #e1001a; /* Initial border style */
-    color: #e1001a; /* Text color */
+    border: 3px solid #e1001a;
+    color: #e1001a;
     background-color: white;
     width: 70%;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
 
 }
 
 .buy.in-cart {
-    background-color: #e1001a; /* Background color for "in-cart" state */
-    color: white; /* Text color for "in-cart" state */
-    border: none; /* Remove border for "in-cart" state */
+    background-color: #e1001a;
+    color: white;
+    border: none;
     outline: none;
 }
 
-/* Info Button Styles */
 .info {
     background-color: #00915b;
     width: 20%;
     color: white;
 }
 
-/* Button Container Styles */
 .btn-container {
     margin-top: -10px;
     justify-content: space-between;
-    align-items: center; /* Center align items vertically */
+    align-items: center;
 }
 
-/* Image Container Styles */
+
 .image-container {
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* This maintains the 1:1 aspect ratio */
+    padding-bottom: 100%;
     overflow: hidden;
 }
 
@@ -89,10 +82,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers container maintaining aspect ratio */
+    object-fit: cover;
 }
 
-/* Header Styles */
+
 .header {
     background-color: white;
     width: 100%;
@@ -104,17 +97,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-/* Logo Styles */
 .logo img {
-    width: 70px; /* Adjust the size as needed */
+    width: 70px;
     height: auto;
 }
 
-/* Search Bar Styles */
 .search-bar {
     display: flex;
     align-items: center;
@@ -122,10 +113,10 @@
 
 .search-bar input {
     height: 43px;
-    padding: 10px; /* Increase padding to make search bar larger */
-    border-radius: 15px; /* Rounded input */
+    padding: 10px;
+    border-radius: 15px;
     border: 2px solid #e1001a;
-    width: 650px; /* Set the width as needed */
+    width: 650px;
     outline: none;
 }
 
@@ -138,7 +129,6 @@
     outline: none;
 }
 
-/* Button Group Styles */
 .buttons button {
     border: none;
     background: none;
@@ -146,27 +136,25 @@
     margin-left: 10px;
 }
 
-/* Profile Button Styles */
 .profile-button {
     padding: 7px 15px;
-    border-radius: 15px; /* Rounded buttons */
+    border-radius: 15px;
     margin-right: 5px;
 }
 
-/* Cart Button Styles */
+
 .cart-button {
-    cursor: pointer; /* Display the pointer cursor on hover */
+    cursor: pointer;
     margin-right: 15px;
 }
 
 .cart-button img {
-    width: 37px; /* Adjust the size as needed */
+    width: 37px;
     height: auto;
 }
 
-/* Search Button Image Styles */
 .search-bar img {
-    width: 30px; /* Adjust the size as needed */
+    width: 30px;
     height: auto;
 }
 

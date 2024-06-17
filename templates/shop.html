@@ -29,14 +29,14 @@
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
     </div>
     <div class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Поиск по наименования">
         <button type="submit">
         </button>
     </div>
     <div class="buttons">
         <a href="{{ url_for('login') }}">
             <button class="cart-button">
-                <span class="total-price">{{ '%.2f'|format(total_price) }} ₽</span>
+                <span class="total-price">{{(user_email)}}</span>
                 <img src="{{ url_for('static', filename='images/prof.png') }}" alt="profile">
             </button>
         </a>
@@ -55,7 +55,7 @@
         <div class="col-3">
             <div class="item">
                 <div class="image-container">
-<img src="{{ url_for('static', filename='images/' + item['image']) }}" class="img-fluid" alt="Item Image">
+                <img src="{{ url_for('static', filename='images/prod/' + item['image']) }}" class="img-fluid" alt="Item Image">
                 </div>
                 <h4>{{ item['name'] }}</h4>
                 <p>{{ '%.2f'|format(item['price']) }} ₽.</p>

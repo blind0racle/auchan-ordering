@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order placed!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        img {
+            width: 30%;
+            display: block;
+            margin: 80px auto 0;
+        }
+        h1 {
+            margin-top: -20px;
+            color: #e1001a;
+        }
+        h2 {
+            margin-top: -30px;
+            color: #00915b;
+        }
+        a {
+            padding: 10px 15px;
+            border-radius: 50px;
+            background-color: #00915b;
+            outline: none;
+            border: none;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/empty.png') }}" alt="Yupee!">
+    <br><h1>Ваша корзина пуста!</h1>
+    <br><h2>Нажмите на кнопку в корзину под товаром и попробуйте снова</h2>
+    <a href="{{ url_for('shop_catalogue') }}">Вернуться в магазин</a>
+</body>
+</html>
